@@ -40,7 +40,7 @@ try:
     back_from_function=get_fruityvice_data(fruit_choice)
     streamlit.dataframe(back_from_function)
 
-
+streamlit.stop()
 
 streamlit.header('The fruit load list contains:')
 #snowflake-related functions
@@ -53,13 +53,6 @@ if streamlit.button('Get Fruit Load List'):
   my_cnx=snowflake.connector.connect(**streamlit.secrets["snowflake"])
   my_data_rows=get_fruit_load_list()
   streamlit.dataframe(my_data_rows)
-
-
-  
-# fruit_choice_1 = streamlit.text_input('What fruit would you like to add?','jackfruit')
-# streamlit.write('Thanks for adding ', fruit_choice_1)
-# #This will not work currectly, but just go with it for now
-# my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
 
 
