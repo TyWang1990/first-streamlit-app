@@ -24,8 +24,6 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 # display the table on the page
 streamlit.dataframe(fruits_to_show)
 
-
-
 streamlit.header('Fruityvice Fruit Advice!')
 fruit_choice = streamlit.text_input('What fruit would you like information about?', 'kiwi')
 if not fruit_choice:
@@ -34,8 +32,6 @@ else:
     fruityvice_response=requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
     streamlit.text(fruityvice_response.json())
 
-
- 
 streamlit.header('The fruit load list contains:')
 #snowflake-related functions
 def get_fruit_load_list():
@@ -48,8 +44,6 @@ if streamlit.button('Get Fruit Load List'):
   my_data_rows=get_fruit_load_list()
   my_cnx.close()
   streamlit.dataframe(my_data_rows)
-
-
 
 #allow the end user to add a fruit to the list
 def insert_row_snowflake(new_fruit):
