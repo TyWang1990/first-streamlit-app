@@ -38,10 +38,10 @@ if not fruit_choice:
 else:
     fruityvice_response=requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
     fruityvice_normalized=pd.json_normalilze(fruityvice_response.json())
-    if back_from_function is not None:
-        streamlit.dataframe(fruityvice_normalized)
-    else:
-        streamlit.warning(f"No data found for {fruit_choice}.")
+      if back_from_function is not None:
+          streamlit.dataframe(fruityvice_normalized)
+      else:
+          streamlit.warning(f"No data found for {fruit_choice}.")
     
 
 streamlit.header('The fruit load list contains:')
