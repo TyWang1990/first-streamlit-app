@@ -57,7 +57,7 @@ try:
 
 
 
-streamlit.header('The fuit load list contains:')
+streamlit.header('Fruityvice Fruit Advice!')
 #snowflake-related functions
 def get_fruit_load_list():
   with my_cnx.cursor() as my_cur:
